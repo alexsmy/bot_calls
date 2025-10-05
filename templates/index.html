@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Telegram Caller</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Основной экран со списком пользователей -->
+    <div id="main-screen" class="screen active">
+        <div class="header">
+            <h1>📞 Звонки</h1>
+            <p id="connection-status">Подключение...</p>
+        </div>
+        <div id="user-list" class="user-list">
+            <!-- Пользователи будут добавлены сюда динамически -->
+        </div>
+    </div>
+
+    <!-- Экран активного звонка -->
+    <div id="call-screen" class="screen">
+        <div class="call-container">
+            <div id="remote-user-info" class="remote-user-info">
+                <div class="avatar"></div>
+                <h2 id="remote-user-name">Имя пользователя</h2>
+                <p id="call-timer">00:00</p>
+            </div>
+            <button id="hangup-btn" class="hangup-btn">Завершить</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно входящего звонка -->
+    <div id="incoming-call-modal" class="modal">
+        <div class="modal-content">
+            <h3>Входящий звонок</h3>
+            <p id="caller-info">Вам звонит...</p>
+            <div class="modal-buttons">
+                <button id="decline-btn" class="decline-btn">Отклонить</button>
+                <button id="accept-btn" class="accept-btn">Принять</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Аудио элементы для звонка -->
+    <audio id="localAudio" autoplay muted></audio>
+    <audio id="remoteAudio" autoplay></audio>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
